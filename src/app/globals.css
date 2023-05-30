@@ -7,7 +7,19 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-
+*{
+  font-family: Roboto,"sans-serif";
+  box-sizing: border-box;
+}
+.hero{
+  background: url("https://cdn.shopify.com/s/files/1/0176/4992/6244/articles/Unknown_349aa1ad-04d5-4429-8429-b07a21cd5f76_1800x.png?v=1610705173");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.hero-text{
+  background-color: #000000a2;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -16,12 +28,40 @@
   }
 }
 
+:root {
+  --deep-blue: #0666c7;
+  --vibrant-green: #4cd819;
+  --vibrant-green-color-light: #d1f1c6;
+  --vibrant-green-color-dark: #3d8124;
+  --clean-white: #f7f7f7;
+  --energetic-orange: #FF6600;
+  --new-black: #1f1f1f;
+  --subtle-gray: #CCCCCC;
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--clean-white);
+}
+
+.header {
+  background-color: var(--deep-blue);
+  color: var(--clean-white);
+}
+
+.button {
+  background-color: var(--deep-blue);
+  color: var(--clean-white);
+}
+
+.highlighted-feature {
+  background-color: var(--vibrant-green);
+  color: var(--clean-white);
+}
+
+.announcement {
+  background-color: var(--energetic-orange);
+  color: var(--clean-white);
+}
+
+.secondary-text {
+  color: var(--subtle-gray);
 }
