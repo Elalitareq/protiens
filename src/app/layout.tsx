@@ -14,9 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body >
+      <body className="font-Roboto">
         <Header/>
-        <main className="flex min-h-screen flex-col items-center justify-between font-Roboto">
+        <main className="flex min-h-screen flex-col items-center justify-between ">
           {children}
           
         </main>

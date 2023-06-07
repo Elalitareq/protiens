@@ -49,8 +49,8 @@ const products = [
               alt={product.name}
             />
           </div>
-          <h3 className="text-2xl font-bold text-white mt-4 px-4">{product.name}</h3>
-          <p className="text-white text-lg  my-2 w-[17rem] px-4 ">
+          <h3 className="text-2xl font-bold text-[#eee] mt-4 px-4">{product.name}</h3>
+          <p className="text-white   my-2 w-[17rem] px-4 ">
             {product.description}
           </p>
           </div>
