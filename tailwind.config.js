@@ -15,7 +15,8 @@ module.exports = {
         'clean-white': '#FFFFFF',
         'energetic-orange': '#FF6600',
         'subtle-gray': '#CCCCCC',
-        "new-black":"#1f1f1f"
+        "new-black":"#1f1f1f",
+        "new-black-green":"#2e312c"
       },
     },
   },
