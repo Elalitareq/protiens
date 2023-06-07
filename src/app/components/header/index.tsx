@@ -1,11 +1,6 @@
-'use client'
-import React, { useState } from "react";
 
-import Image from "next/image";
-import hulk from "../../assets/vector/hulk.svg";
 import Link from "next/link"
 const Header = () => {
-  const [open,setOpen]= useState(false)
   return (
     <header className="fixed w-full">
       <nav className="bg-new-black border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-new-black">
