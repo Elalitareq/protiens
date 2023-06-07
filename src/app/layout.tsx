@@ -1,8 +1,6 @@
 import Header from "./components/header";
 import "./globals.css";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "HULK-Pharma",
@@ -16,12 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body >
         <Header/>
-        <main className="flex min-h-screen flex-col items-center justify-between ">
+        <main className="flex min-h-screen flex-col items-center justify-between font-Roboto">
           {children}
           
         </main>
+
       </body>
     </html>
   );

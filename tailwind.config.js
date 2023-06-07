@@ -6,7 +6,11 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      'Roboto': ['Roboto', 'sans-serif'],
+    },
     extend: {
+    
       colors: {
         'deep-blue': '#0666c7',
         'vibrant-green': '#4cd819',
@@ -16,7 +20,8 @@ module.exports = {
         'energetic-orange': '#FF6600',
         'subtle-gray': '#CCCCCC',
         "new-black":"#1f1f1f",
-        "new-black-green":"#2e312c"
+        "new-black-green":"#2e312c",
+        "dark-black":"#2f312e"
       },
     },
   },

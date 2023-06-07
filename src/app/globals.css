@@ -7,10 +7,10 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-*{
-  font-family: Roboto,"sans-serif";
-  box-sizing: border-box;
+body{
+  font-family: Roboto, "sans-serif";
 }
+
 .hero{
   background: url("https://cdn.shopify.com/s/files/1/0176/4992/6244/articles/Unknown_349aa1ad-04d5-4429-8429-b07a21cd5f76_1800x.png?v=1610705173");
   background-size: cover;
