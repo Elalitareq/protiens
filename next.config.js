@@ -3,6 +3,7 @@ const nextConfig = {
     images:{
         domains:[
             "jymsupplementscience.com",
+            "i.ibb.co"
         ]
     }
 }

@@ -1,8 +1,24 @@
+'use client'
+import {useState,useEffect} from "react"
 import Image from "next/image";
 import hulk from "./assets/vector/hulk.svg";
 import ProductListing from "./components/productsListing";
 import CheckCodeModal from "./components/checkCodeModal"
-export default function Home() {
+import { productsArray  } from "./lib/productsArray";
+export default  function Home() {
+  const [products,setProducts]=useState(productsArray)
+  const getProduct = ()=>{
+    fetch("/api/product").then(res=>{
+      return res.json()
+    }).then((data)=>{
+      setProducts(data)
+    })
+  }
+  useEffect(() => {
+  getProduct()
+    
+  }, [])
+  
 
   return (
     <>
@@ -28,7 +44,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <ProductListing/>
+      <ProductListing products={products}/>
       <CheckCodeModal/>
       
      

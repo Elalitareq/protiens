@@ -1,15 +1,42 @@
-import React from 'react';
-import Product from '../product';
-import { productsArray } from '../../lib/productsArray';
+import React from "react";
+import Product from "../product";
 
-const ProductListing: React.FC = () => {
+interface ProductProps {
+  onEditClick?: (product:
+     {
+      id: number;
+      name: string;
+      description: string;
+      image: string;
+    }) => void;
+  editable?: boolean;
+  products: {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+  }[];
+  
+}
+
+const ProductListing: React.FC<ProductProps> = ({
+  editable,
+  onEditClick,
+  products,
+}) => {
   return (
     <div className="w-full">
-      {productsArray.map((product, productIndex) => (
-        <Product key={product._id} product={product} index={productIndex} />
+      {products.map((product, productIndex) => (
+        <Product
+          key={product.id}
+          product={product}
+          index={productIndex}
+          editable={editable}
+          onEditClick={onEditClick}
+        />
       ))}
     </div>
   );
-}
+};
 
 export default ProductListing;
