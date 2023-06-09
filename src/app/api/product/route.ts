@@ -15,7 +15,6 @@ export async function POST(request: Request) {
         name: body.name,
         description: body.description,
         image: body.image,
-        userId: body.userId,
       },
     });
     return new Response(JSON.stringify(product), { status: 201 });
