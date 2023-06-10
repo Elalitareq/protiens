@@ -1,11 +1,16 @@
 import { PrismaClient } from "@prisma/client";
 
-const globalForPrisma = global as unknown as  {prisma:PrismaClient};
-
-export const prisma =globalForPrisma.prisma || new PrismaClient()
-
-if(process.env.NODE_ENV === 'development') {
-    
-globalForPrisma.prisma = prisma
+// Create a global variable for Prisma
+declare global {
+  var prisma: PrismaClient;
 }
-export default prisma
+
+// Initialize Prisma client
+export const prisma = global.prisma || new PrismaClient();
+
+if (process.env.NODE_ENV === "development") {
+  // Assign Prisma client to the global variable
+  global.prisma = prisma;
+}
+
+export default prisma;
