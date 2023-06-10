@@ -11,6 +11,7 @@ export default  function Home() {
     fetch("/api/product").then(res=>{
       return res.json()
     }).then((data)=>{
+      console.log(data)
       setProducts(data)
     })
   }
