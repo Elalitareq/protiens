@@ -19,7 +19,7 @@ export default  function Home() {
       console.log(data)
       if(data.error){
 
-        setProducts(null)
+        // setProducts(null)
       }else{
 
         setProducts(data)
