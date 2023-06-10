@@ -10,7 +10,7 @@ interface ProductProps {
       image: string;
     }) => void;
   editable?: boolean;
-  products: {
+  products?: {
     id: number;
     name: string;
     description: string;
@@ -26,7 +26,7 @@ const ProductListing: React.FC<ProductProps> = ({
 }) => {
   return (
     <div className="w-full">
-      {products.map((product, productIndex) => (
+      {products?products.map((product, productIndex) => (
         <Product
           key={product.id}
           product={product}
@@ -34,7 +34,7 @@ const ProductListing: React.FC<ProductProps> = ({
           editable={editable}
           onEditClick={onEditClick}
         />
-      ))}
+      )):<>No products Available</>}
     </div>
   );
 };
