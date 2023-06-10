@@ -44,7 +44,7 @@ export default  function Home() {
           </div>
         </div>
       </div>
-      <ProductListing products={products}/>
+      <ProductListing products={products||false}/>
       <CheckCodeModal/>
       
      
