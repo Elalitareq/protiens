@@ -28,7 +28,7 @@ export async function POST (request: Request){
         const {password,...userWithoutPassword} = user;
         return new Response(JSON.stringify({user:userWithoutPassword}), {status:201});
     }catch(e){
-        return new Response(JSON.stringify({error: e}), {status: 500});
+        return new Response(JSON.stringify({error: e.message}), {status: 500});
     }
 
 }
