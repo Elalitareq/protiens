@@ -15,15 +15,15 @@ interface ProductProps {
     name: string;
     description: string;
     image: string;
-  }[];
+  }[]|null;
   
 }
-
 const ProductListing: React.FC<ProductProps> = ({
   editable,
   onEditClick,
   products,
 }) => {
+  console.log(products)
   return (
     <div className="w-full">
       {products?products.map((product, productIndex) => (

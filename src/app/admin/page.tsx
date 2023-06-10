@@ -16,7 +16,7 @@ interface Product {
 const Admin = () => {
   const { data: session, status } = useSession();
   const [openAdd, setOpenAdd] = useState(false);
-  const [products,setProducts] = useState<Product[]|[]>(productsArray)
+  const [products,setProducts] = useState<Product[]|null>(productsArray)
 
   const onDeleteClick = (product: Product) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this product?");
@@ -45,7 +45,13 @@ const Admin = () => {
     fetch("/api/product").then(res=>{
       return res.json()
     }).then((data)=>{
-      setProducts(data)
+      if(data.error){
+
+        setProducts(null)
+      }else{
+
+        setProducts(data)
+      }
     })
   }
   useEffect(()=>{
