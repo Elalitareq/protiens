@@ -10,7 +10,7 @@ export const productsArray = [
 
     benefits:
       "The effects and benefits of Sustanon are going to be identical to those which you get from all other testosterone steroids : size and strength and recovery.",
-    usage: `A simple beginner Sustanon 250 cycle can consist of 300-400mg per week for 8 weeks. \n Intermediate users might consider stack Sustanon with one other steroid for more pronounced effects. \n Even in that case, the dosage of Sustanon will still be useful between 500-750mg weekly with a cycle length of 8 to 10 weeks.`,
+    usage: `A simple beginner Sustanon 200 cycle can consist of 300-400mg per week for 8 weeks. \n Intermediate users might consider stack Sustanon with one other steroid for more pronounced effects. \n Even in that case, the dosage of Sustanon will still be useful between 500-750mg weekly with a cycle length of 8 to 10 weeks.`,
     image:
       "https://jymsupplementscience.com/cdn/shop/products/PRJ04BB_23882_121321_V1.1_Front-1200px_f2028dfa-3e7f-4877-8582-9d3eb7173e5b.png?v=1685557842",
   },
