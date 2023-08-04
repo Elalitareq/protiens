@@ -20,7 +20,7 @@ export default function RootLayout({
         </main>
         <footer className="w-full bg-new-black text-white text-center py-4">
           <p>&copy; {new Date().getFullYear()} HULK-Pharma. All rights reserved.</p>
-          <p>Address: 1234 Main Street, City, Country</p>
+          <p className="my-2">Made Specially For Middle-East By HULK-Pharma Laboratories</p>
           <p>Email: info@hulk-pharma.com</p>
         </footer>
       </body>

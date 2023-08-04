@@ -6,30 +6,8 @@ import ProductListing from "./components/productsListing";
 import CheckCodeModal from "./components/checkCodeModal"
 import { productsArray  } from "./lib/productsArray";
 export default  function Home() {
-  const [products,setProducts]=useState<{
-      id: number,
-      name: string,
-      image: string,
-      description: string,
-  }[]|null>(productsArray)
-  const getProduct = ()=>{
-    fetch("/api/product").then(res=>{
-      return res.json()
-    }).then((data)=>{
-      console.log(data)
-      if(data.error){
 
-        // setProducts(null)
-      }else{
-
-        setProducts(data)
-      }
-    })
-  }
-  useEffect(() => {
-  getProduct()
-    
-  }, [])
+ 
   
 
   return (
@@ -56,7 +34,7 @@ export default  function Home() {
           </div>
         </div>
       </div>
-      <ProductListing products={products}/>
+      <ProductListing products={productsArray}/>
       <CheckCodeModal/>
       
      
