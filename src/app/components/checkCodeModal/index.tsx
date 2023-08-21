@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const CheckCodeModal: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const [code, setCode] = useState<number>(0);
+  const [code, setCode] = useState<string>("");
   const [codeStatus, setCodeStatus] = useState<"correct" | "incorrect" | null>(
     null
   );
@@ -15,7 +15,9 @@ const CheckCodeModal: React.FC = () => {
     e.preventDefault();
     // Replace this with your code verification logic
     // Set the codeStatus to "correct" or "incorrect" based on the result
-    const isCodeCorrect = code < 1630201 && code > 16236059; // Replace with your code verification result
+    const numberCode = parseInt(code);
+    const isCodeCorrect = Number(code) <163019  && Number(code) >162359 ; // Replace with your code verification result
+    console.log(typeof(numberCode));
     setCodeStatus(isCodeCorrect ? "correct" : "incorrect");
     setShowCheck(true);
     setTimeout(() => {
@@ -25,7 +27,7 @@ const CheckCodeModal: React.FC = () => {
 
   const closeModal = () => {
     setOpen(false);
-    setCode(0);
+    setCode("");
     setCodeStatus(null);
   };
 
@@ -134,9 +136,9 @@ const CheckCodeModal: React.FC = () => {
               onSubmit={handleCheckCode}
             >
               <input
-                type="number"
+                type="string"
                 value={code}
-                onChange={(e) => setCode(Number(e.target.value))}
+                onChange={(e) => setCode(e.target.value)}
                 placeholder="Enter your code"
                 className="w-full p-2 border border-gray-400 rounded-md"
               />
