@@ -7,17 +7,17 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-body{
+body {
   font-family: Roboto, "sans-serif";
 }
 
-.hero{
+.hero {
   background: url("https://cdn.shopify.com/s/files/1/0176/4992/6244/articles/Unknown_349aa1ad-04d5-4429-8429-b07a21cd5f76_1800x.png?v=1610705173");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-.hero-text{
+.hero-text {
   background-color: #000000e2;
 }
 @media (prefers-color-scheme: dark) {
@@ -34,9 +34,9 @@ body{
   --vibrant-green-color-light: #d1f1c6;
   --vibrant-green-color-dark: #2f312e;
   --clean-white: #f7f7f7;
-  --energetic-orange: #FF6600;
+  --energetic-orange: #ff6600;
   --new-black: #1f1f1f;
-  --subtle-gray: #CCCCCC;
+  --subtle-gray: #cccccc;
 }
 body {
   background-color: var(--clean-white);
@@ -64,4 +64,33 @@ body {
 
 .secondary-text {
   color: var(--subtle-gray);
+}
+@keyframes animateC {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes animation-c {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

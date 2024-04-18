@@ -4,25 +4,59 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const CheckCodeModal: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [code, setCode] = useState<string>("");
   const [codeStatus, setCodeStatus] = useState<"correct" | "incorrect" | null>(
     null
   );
   const [showCheck, setShowCheck] = useState(false);
 
-  const handleCheckCode = (e: { preventDefault: () => void }) => {
+  function isWithinRange(inputNum: string) {
+    const ranges = [
+      ["017826", "017880"],
+      ["017886", "017940"],
+      ["017946", "018000"],
+      ["018006", "018060"],
+    ];
+
+    const paddedInput = Number(inputNum); // Pad input with '0' to make it six digits
+
+    for (let i = 0; i < ranges.length; i++) {
+      const start = parseInt(ranges[i][0]);
+      const end = parseInt(ranges[i][1]);
+      if (paddedInput >= start && paddedInput <= end) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  const handleCheckCode = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     // Replace this with your code verification logic
     // Set the codeStatus to "correct" or "incorrect" based on the result
+
+    setIsLoading(true);
+    await new Promise<void>((resolve) => {
+      setTimeout(() => {
+        // Code to execute after 3 seconds
+        resolve();
+      }, 3000);
+    });
+
     const numberCode = parseInt(code);
-    const isCodeCorrect = Number(code) <163019  && Number(code) >162359 ; // Replace with your code verification result
-    console.log(typeof(numberCode));
+    const isCodeCorrect =
+      (Number(code) < 163019 && Number(code) > 162359) || isWithinRange(code); // Replace with your code verification result
+
+    console.log(typeof numberCode);
+    setIsLoading(false);
     setCodeStatus(isCodeCorrect ? "correct" : "incorrect");
     setShowCheck(true);
     setTimeout(() => {
       setShowCheck(false);
-    }, 2000);
+      setCodeStatus(null);
+    }, 3000);
   };
 
   const closeModal = () => {
@@ -53,6 +87,12 @@ const CheckCodeModal: React.FC = () => {
             >
               X
             </span>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-transparent border-3 border-blue-100 rounded-full text-center leading-48 font-sans text-lg text-blue-600 uppercase shadow-lg">
+              Loading...
+              <div className="absolute top-0 left-0 w-full h-full border-3 border-transparent border-blue-600 rounded-full animate-spin animation-c"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1 bg-transparent origin-left animate-spin animation"></div>
+              <div className="absolute w-4 h-4 rounded-full bg-blue-500 top-0 right-0 -mt-2 -mr-2 shadow-lg"></div>
+            </div>
 
             <div className="w-32 h-32 rounded-full bg-white flex items-center justify-center">
               {codeStatus === "correct" && (
@@ -151,7 +191,7 @@ const CheckCodeModal: React.FC = () => {
 
               <h2 className="text-xl text-center text-gray-900 mt-4 transition duration-500">
                 {codeStatus === "correct"
-                  ? "Your code is correct!"
+                  ? "The product is authentic!"
                   : codeStatus === "incorrect"
                   ? "This product is not Authentic."
                   : "HULK-Pharma"}
