@@ -28,6 +28,10 @@ body {
   }
 }
 
+.text-shadow {
+  text-shadow: 2px 1px 1px white;
+}
+
 :root {
   --deep-blue: #0666c7;
   --vibrant-green: #4cd819;

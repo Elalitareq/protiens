@@ -9,12 +9,7 @@ import { productImages } from "./assets/proteindImages/productsImages";
 export default function Home() {
   const product = {
     id: 10,
-    title: (
-      <>
-        New <span className="text-[#884bbd]">Method</span> , New{" "}
-        <span className="text-[#8a7955]">Technique</span>
-      </>
-    ),
+    title: "New Method, New Technique",
     description:
       "Make your mix with our New Product Series , 1*10 ml Steroid Ampoule in addition of 2*5 ml empty glass vial helping you make your Mixture.",
     steroids: [
@@ -56,13 +51,11 @@ export default function Home() {
       <article
         className={`product-item flex flex-col items-center justify-center py-16   bg-new-black-green`}
       >
-        <h2 className="text-4xl font-bold text-center text-[#eee] my-4 px-4">
+        <h2 className="text-shadow text-3xl font-bold text-center text-vibrant-green my-4 px-4 drop-shadow-2xl  ">
           {product.title}
         </h2>
-        <div
-          className={`shadow shadow-gray-900 rounded-md  text-center relative bg-new-black`}
-        >
-          <div className="w-[17rem] h-[17rem]  bg-white rounded-t">
+        <div className={` rounded-md  text-center relative bg-new-black`}>
+          <div className="relative w-[17rem] h-[17rem] bg-white rounded-t overflow-hidden">
             <Image
               src={productImages[product.id]}
               layout="responsive"
@@ -70,7 +63,13 @@ export default function Home() {
               width={200}
               alt={product.description}
             />
+
+            <div className="bg-hero-transparent absolute inset-0 w-full h-full " />
+            <div className="bg-hero-transparent2 absolute inset-0 w-full h-full " />
+            <div className="bg-hero-transparent3 absolute inset-0 w-full h-full " />
+            <div className="bg-hero-transparent4 absolute inset-0 w-full h-full " />
           </div>
+
           {/* <p className="text-white my-2 w-[17rem] px-4 text-xs">{product.description}</p> */}
         </div>
         <h3 className="text-lg font-bold text-center text-[#eee] my-4 px-4">
