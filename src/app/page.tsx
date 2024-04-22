@@ -9,7 +9,12 @@ import { productImages } from "./assets/proteindImages/productsImages";
 export default function Home() {
   const product = {
     id: 10,
-    title: "New Method, New Technique",
+    title: (
+      <>
+        New Method
+        <br /> New Technique
+      </>
+    ),
     description:
       "Make your mix with our New Product Series , 1*10 ml Steroid Ampoule in addition of 2*5 ml empty glass vial helping you make your Mixture.",
     steroids: [
@@ -51,7 +56,7 @@ export default function Home() {
       <article
         className={`product-item flex flex-col items-center justify-center py-16   bg-new-black-green`}
       >
-        <h2 className="text-shadow text-3xl font-bold text-center text-vibrant-green my-4 px-4 drop-shadow-2xl  ">
+        <h2 className="text-shadow text-2xl font-bold text-center text-vibrant-green my-4 px-4 drop-shadow-2xl  ">
           {product.title}
         </h2>
         <div className={` rounded-md  text-center relative bg-new-black`}>
@@ -63,16 +68,11 @@ export default function Home() {
               width={200}
               alt={product.description}
             />
-
-            <div className="bg-hero-transparent absolute inset-0 w-full h-full " />
-            <div className="bg-hero-transparent2 absolute inset-0 w-full h-full " />
-            <div className="bg-hero-transparent3 absolute inset-0 w-full h-full " />
-            <div className="bg-hero-transparent4 absolute inset-0 w-full h-full " />
           </div>
 
           {/* <p className="text-white my-2 w-[17rem] px-4 text-xs">{product.description}</p> */}
         </div>
-        <h3 className="text-lg font-bold text-center text-[#eee] my-4 px-4">
+        <h3 className="text-lg italic text-center text-[#eee] my-4 px-4">
           {product.description}
         </h3>
         <ul className="text-white my-2 px-4 text-xs columns-2">
