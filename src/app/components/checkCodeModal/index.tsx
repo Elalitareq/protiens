@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 
 const CheckCodeModal: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [code, setCode] = useState<string>("");
   const [codeStatus, setCodeStatus] = useState<"correct" | "incorrect" | null>(
     null
@@ -37,26 +36,17 @@ const CheckCodeModal: React.FC = () => {
     // Replace this with your code verification logic
     // Set the codeStatus to "correct" or "incorrect" based on the result
 
-    setIsLoading(true);
-    await new Promise<void>((resolve) => {
-      setTimeout(() => {
-        // Code to execute after 3 seconds
-        resolve();
-      }, 3000);
-    });
-
     const numberCode = parseInt(code);
     const isCodeCorrect =
       (Number(code) < 163019 && Number(code) > 162359) || isWithinRange(code); // Replace with your code verification result
 
     console.log(typeof numberCode);
-    setIsLoading(false);
     setCodeStatus(isCodeCorrect ? "correct" : "incorrect");
     setShowCheck(true);
     setTimeout(() => {
       setShowCheck(false);
       setCodeStatus(null);
-    }, 3000);
+    }, 20000);
   };
 
   const closeModal = () => {
@@ -81,19 +71,6 @@ const CheckCodeModal: React.FC = () => {
           }`}
         >
           <div className="w-[95%] bg-gray-200 flex flex-col items-center p-4 rounded relative">
-            <span
-              className="top-4 right-4 text-black font-bold absolute font-sans cursor-pointer"
-              onClick={closeModal}
-            >
-              X
-            </span>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-transparent border-3 border-blue-100 rounded-full text-center leading-48 font-sans text-lg text-blue-600 uppercase shadow-lg">
-              Loading...
-              <div className="absolute top-0 left-0 w-full h-full border-3 border-transparent border-blue-600 rounded-full animate-spin animation-c"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1 bg-transparent origin-left animate-spin animation"></div>
-              <div className="absolute w-4 h-4 rounded-full bg-blue-500 top-0 right-0 -mt-2 -mr-2 shadow-lg"></div>
-            </div>
-
             <div className="w-32 h-32 rounded-full bg-white flex items-center justify-center">
               {codeStatus === "correct" && (
                 <motion.svg
