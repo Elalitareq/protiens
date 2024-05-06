@@ -70,7 +70,13 @@ const CheckCodeModal: React.FC = () => {
             open ? "w-full h-full top-0 left-0" : "w-0 h-0 top-1/2 left-1/2"
           }`}
         >
-          <div className="w-[95%] bg-gray-200 flex flex-col items-center p-4 rounded relative">
+          <div className="w-[95%]  bg-gray-200 flex flex-col items-center p-4 rounded relative">
+            <button
+              className="absolute top-4 right-4 font-bold "
+              onClick={() => setOpen(false)}
+            >
+              X
+            </button>
             <div className="w-32 h-32 rounded-full bg-white flex items-center justify-center">
               {codeStatus === "correct" && (
                 <motion.svg
