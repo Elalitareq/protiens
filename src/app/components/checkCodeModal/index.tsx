@@ -13,10 +13,10 @@ const CheckCodeModal: React.FC = () => {
 
   function isWithinRange(inputNum: string) {
     const ranges = [
-      ["017826", "017880"],
-      ["017886", "017940"],
-      ["017946", "018000"],
-      ["018006", "018060"],
+      ["017820", "017880"],
+      ["017880", "017940"],
+      ["017940", "018000"],
+      ["018000", "018060"],
     ];
 
     const paddedInput = Number(inputNum); // Pad input with '0' to make it six digits
